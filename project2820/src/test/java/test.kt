@@ -6,7 +6,7 @@ import org.junit.Assert.*
 class Project2820Test{
     @Test
     fun testForRowWin1(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(2,1)
@@ -21,7 +21,7 @@ class Project2820Test{
 
     @Test
     fun testForRowWin2(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(2,1)
@@ -36,7 +36,7 @@ class Project2820Test{
 
     @Test
     fun testForColWin1(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(2,1)
@@ -51,7 +51,7 @@ class Project2820Test{
 
     @Test
     fun testForColWin2(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(2,1)
@@ -66,7 +66,7 @@ class Project2820Test{
 
     @Test
     fun testForDiagonalWin1(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(2,1)
@@ -81,7 +81,7 @@ class Project2820Test{
 
     @Test
     fun testForDiagonalWin2(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(2,0)
@@ -96,7 +96,7 @@ class Project2820Test{
 
     @Test
     fun testForDiagonalWin3(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 2)
         G.changeSymbol()
         G.placeSymbol(2,1)
@@ -111,7 +111,7 @@ class Project2820Test{
 
     @Test
     fun testForDiagonalWin4(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 2)
         G.changeSymbol()
         G.placeSymbol(1,1)
@@ -126,7 +126,7 @@ class Project2820Test{
 //hi
     @Test
     fun testForDraw1(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(1,1)
@@ -144,7 +144,7 @@ class Project2820Test{
     }
     @Test
     fun testForDraw2(){
-        var G = TicTacToe()
+        val G = TicTacToe()
         G.placeSymbol(0, 0)
         G.changeSymbol()
         G.placeSymbol(1,1)
