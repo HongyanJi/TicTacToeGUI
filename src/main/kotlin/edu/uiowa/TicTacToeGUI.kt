@@ -48,9 +48,8 @@ class TicTacToeController {
     @FXML
     var board22: Button = Button()
 
-
     @FXML
-    fun changeSymbolBoard00() {
+    fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board00.text = "${B.curPlayer}"
@@ -60,7 +59,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard01() {
+    fun changePlayerBoard01() {
         if (P.placeSymbol(0, 1, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board01.text = "${B.curPlayer}"
@@ -70,7 +69,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard02() {
+    fun changePlayerBoard02() {
         if (P.placeSymbol(0, 2, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board02.text = "${B.curPlayer}"
@@ -80,7 +79,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard10() {
+    fun changePlayerBoard10() {
         if (P.placeSymbol(1, 0, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board10.text = "${B.curPlayer}"
@@ -90,7 +89,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard11() {
+    fun changePlayerBoard11() {
         if (P.placeSymbol(1, 1, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board11.text = "${B.curPlayer}"
@@ -100,7 +99,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard12() {
+    fun changePlayerBoard12() {
         if (P.placeSymbol(1, 2, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board12.text = "${B.curPlayer}"
@@ -110,7 +109,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard20() {
+    fun changePlayerBoard20() {
         if (P.placeSymbol(2, 0, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board20.text = "${B.curPlayer}"
@@ -120,7 +119,7 @@ class TicTacToeController {
         }
     }
     @FXML
-    fun changeSymbolBoard21() {
+    fun changePlayerBoard21() {
         if (P.placeSymbol(2, 1, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board21.text = "${B.curPlayer}"
@@ -131,7 +130,7 @@ class TicTacToeController {
 
     }
     @FXML
-    fun changeSymbolBoard22() {
+    fun changePlayerBoard22() {
         if (P.placeSymbol(2, 2, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board22.text = "${B.curPlayer}"
@@ -155,7 +154,7 @@ class TicTacToe: Application() {
 class Temp: Application() {
     override fun start(primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(javaClass.getClassLoader().getResource("Temp.fxml"))
-        primaryStage.title = "Tic Tac Toe (3x3)"
+        primaryStage.title = "TicTacToe"
         primaryStage.scene = Scene(root)
         primaryStage.show()
     }
