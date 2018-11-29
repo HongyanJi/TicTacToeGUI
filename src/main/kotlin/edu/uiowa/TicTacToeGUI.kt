@@ -122,11 +122,6 @@ class TicTacToeController {
     }
 }
 
-//winner.text = "Current Player is ${B.curPlayer}"
-//board22.text = "${B.curPlayer}"
-//if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-//else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-//P.changePlayer(B)
 
 class TicTacToe: Application() {
     override fun start(primaryStage: Stage) {
