@@ -19,13 +19,9 @@ class TempController {
     fun regame() {
         TicTacToe().start(Stage())
     }
-
-
-
 }
 
 class TicTacToeController {
-
 
     val B:ThreeByThree = ThreeByThree()
     val P:Player = TwoHumanPlayer()
@@ -52,14 +48,6 @@ class TicTacToeController {
     @FXML
     var board22: Button = Button()
 
-//
-//    var symbol: Char = B.curPlayer
-//    board01.text = symbol.toString()
-//    P.changePlayer(B)
-//    P.placeSymbol(0,1,B)
-//    if (!P.placeSymbol(0,1,B)){ winner.text = "Current Player is ${symbol}"}
-//    if (W.Win(B)) { winner.text = "${symbol} won the game"; Temp().start(Stage())}
-//    if (B.isBoardFull) {winner.text = "The game is draw"; Temp().start(Stage()) }
 
     @FXML
     fun changeSymbolBoard00() {
@@ -161,7 +149,6 @@ class TicTacToe: Application() {
         primaryStage.scene = Scene(root)
         primaryStage.show()
     }
-
 
 }
 
