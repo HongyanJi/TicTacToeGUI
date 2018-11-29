@@ -10,10 +10,10 @@
       <Button fx:id="board01" layoutX="113.0" layoutY="38.0" mnemonicParsing="false" onAction="#changeSymbolBoard01" prefHeight="75.0" prefWidth="75.0" />
       <Button fx:id="board02" layoutX="188.0" layoutY="38.0" mnemonicParsing="false" onAction="#changeSymbolBoard02" prefHeight="75.0" prefWidth="75.0" />
       <Button fx:id="board10" layoutX="38.0" layoutY="113.0" mnemonicParsing="false" onAction="#changeSymbolBoard10" prefHeight="75.0" prefWidth="75.0" />
-      <Button fx:id="board20" layoutX="38.0" layoutY="188.0" mnemonicParsing="false" onAction="#changeSymbolBoard20" prefHeight="75.0" prefWidth="75.0" />
-      <Button fx:id="board21" layoutX="113.0" layoutY="188.0" mnemonicParsing="false" onAction="#changeSymbolBoard21" prefHeight="75.0" prefWidth="75.0" />
       <Button fx:id="board11" layoutX="113.0" layoutY="113.0" mnemonicParsing="false" onAction="#changeSymbolBoard11" prefHeight="75.0" prefWidth="75.0" />
       <Button fx:id="board12" layoutX="188.0" layoutY="113.0" mnemonicParsing="false" onAction="#changeSymbolBoard12" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="board20" layoutX="38.0" layoutY="188.0" mnemonicParsing="false" onAction="#changeSymbolBoard20" prefHeight="75.0" prefWidth="75.0" />
+      <Button fx:id="board21" layoutX="113.0" layoutY="188.0" mnemonicParsing="false" onAction="#changeSymbolBoard21" prefHeight="75.0" prefWidth="75.0" />
       <Button fx:id="board22" layoutX="188.0" layoutY="188.0" mnemonicParsing="false" onAction="#changeSymbolBoard22" prefHeight="75.0" prefWidth="75.0" />
       <Label fx:id="winner" layoutX="89.0" layoutY="6.0" prefHeight="17.0" prefWidth="124.0" />
    </children>
