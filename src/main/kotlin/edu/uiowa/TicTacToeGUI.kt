@@ -51,95 +51,82 @@ class TicTacToeController {
     @FXML
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board00.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard01() {
         if (P.placeSymbol(0, 1, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board01.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard02() {
         if (P.placeSymbol(0, 2, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board02.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard10() {
         if (P.placeSymbol(1, 0, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board10.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard11() {
         if (P.placeSymbol(1, 1, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board11.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard12() {
         if (P.placeSymbol(1, 2, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board12.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard20() {
         if (P.placeSymbol(2, 0, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board20.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
     }
     @FXML
     fun changePlayerBoard21() {
         if (P.placeSymbol(2, 1, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board21.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
         }
 
     }
     @FXML
     fun changePlayerBoard22() {
         if (P.placeSymbol(2, 2, B)) {
-            winner.text = "Current Player is ${B.curPlayer}"
             board22.text = "${B.curPlayer}"
-            if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-            else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
-            P.changePlayer(B)
+            commButtonFeature()
+
         }
     }
+
+    fun commButtonFeature() {
+        winner.text = "Current Player is ${B.curPlayer}"
+        if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
+        else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
+        P.changePlayer(B)
+    }
 }
+
+//winner.text = "Current Player is ${B.curPlayer}"
+//board22.text = "${B.curPlayer}"
+//if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
+//else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
+//P.changePlayer(B)
 
 class TicTacToe: Application() {
     override fun start(primaryStage: Stage) {
