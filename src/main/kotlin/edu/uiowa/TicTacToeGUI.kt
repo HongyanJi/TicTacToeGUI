@@ -91,7 +91,7 @@ class TicTacToeController {
     }
     @FXML
     fun changeSymbolBoard11() {
-        if (!P.placeSymbol(1, 1, B)) {
+        if (P.placeSymbol(1, 1, B)) {
             winner.text = "Current Player is ${B.curPlayer}"
             board11.text = "${B.curPlayer}"
             if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
@@ -155,7 +155,7 @@ class TicTacToe: Application() {
 class Temp: Application() {
     override fun start(primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(javaClass.getClassLoader().getResource("Temp.fxml"))
-        primaryStage.title = "regame?"
+        primaryStage.title = "Tic Tac Toe (3x3)"
         primaryStage.scene = Scene(root)
         primaryStage.show()
     }
