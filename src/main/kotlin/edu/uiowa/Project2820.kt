@@ -1,16 +1,11 @@
 package edu.uiowa
 
-
-// this is where you will begin the first version of your project
-// but you will also need to connect this project with your github.uiowa.edu
-// repository, as explained in the discussion section 9th November
-
-//
 //Second version with GUI: 3x3 board, 2 human players. First player hold "x" symbol.
 //"Engine" part
+//
 interface Board{
     var board: Array<CharArray>
-    var curSymbol: Char
+    var curPlayer: Char
     val isBoardFull : Boolean
     fun initBoard()
 
@@ -18,7 +13,7 @@ interface Board{
 
 interface Player{
     fun placeSymbol(row: Int, col: Int, boardObject: ThreeByThree): Boolean
-    fun changeSymbol(boardObject: ThreeByThree)
+    fun changePlayer(boardObject: ThreeByThree)
 }
 
 interface CheckForWin{
@@ -32,7 +27,7 @@ interface CheckForWin{
 class ThreeByThree : Board {
 
     override var board = arrayOf<CharArray>()
-    override var curSymbol = ' '
+    override var curPlayer = ' '
 
     // if find "?" return false, otherwise full.
     override val isBoardFull: Boolean
@@ -50,7 +45,7 @@ class ThreeByThree : Board {
 
     init {
         board = Array(3) { CharArray(3) }
-        curSymbol = 'x'
+        curPlayer = 'X'
         initBoard()
     }
 
@@ -68,11 +63,11 @@ class ThreeByThree : Board {
 class TwoHumanPlayer : Player {
 
     // Change player symbol back and forth.
-    override fun changeSymbol(boardObject: ThreeByThree) {
-        if (boardObject.curSymbol == 'x') {
-            boardObject.curSymbol = 'o'
+    override fun changePlayer(boardObject: ThreeByThree) {
+        if (boardObject.curPlayer == 'X') {
+            boardObject.curPlayer = 'O'
         } else {
-            boardObject.curSymbol = 'x'
+            boardObject.curPlayer = 'X'
         }
     }
 
@@ -82,7 +77,7 @@ class TwoHumanPlayer : Player {
         if (row >= 0 && row < 3) {
             if (col >= 0 && col < 3) {
                 if (boardObject.board[row][col] == '?') {
-                    boardObject.board[row][col] = boardObject.curSymbol
+                    boardObject.board[row][col] = boardObject.curPlayer
                     return true
                 }
             }
@@ -130,5 +125,3 @@ class Check :CheckForWin {
 
 }
 
-//GUI part
-//test
