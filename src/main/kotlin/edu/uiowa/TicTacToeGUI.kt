@@ -15,9 +15,15 @@ import javafx.stage.Stage
 class TempController {
     @FXML
     var regame: Button = Button()
+    @FXML
+    var stop: Button = Button()
 
     fun regame() {
         TicTacToe().start(Stage())
+    }
+
+    fun stop(){
+        TicTacToe().stop()
     }
 }
 
@@ -125,7 +131,9 @@ class TicTacToeController {
 
 class TicTacToe: Application() {
     override fun start(primaryStage: Stage) {
-        val root = FXMLLoader.load<Parent>(javaClass.getClassLoader().getResource("Board.fxml"))
+        val root = FXMLLoader.load<Parent>(
+                javaClass.getClassLoader()
+                        .getResource("Board.fxml"))
         primaryStage.title = "Tic Tac Toe (3x3)"
         primaryStage.scene = Scene(root)
         primaryStage.show()
@@ -139,6 +147,12 @@ class Temp: Application() {
         primaryStage.title = "TicTacToe"
         primaryStage.scene = Scene(root)
         primaryStage.show()
+    }
+
+    override fun stop() {
+        val root = FXMLLoader.load<Parent>(javaClass.getClassLoader().getResource("Temp.fxml"))
+        val stage = root.scene.window
+        stage.onCloseRequest
     }
 }
 
