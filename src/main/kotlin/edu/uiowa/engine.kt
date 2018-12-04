@@ -1,5 +1,6 @@
 package edu.uiowa
 
+import java.util.Random
 //Second version with GUI: 3x3 board, 2 human players. First player hold "x" symbol.
 //"Engine" part
 //

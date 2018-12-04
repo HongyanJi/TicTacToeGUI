@@ -9,10 +9,11 @@ import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.stage.Stage
 
-var winnerForThisGame = ""
 
 //GUI part
 //
+var winnerForThisGame = ""
+
 class TempController {
     @FXML
     var winner: Label = Label()
@@ -69,56 +70,56 @@ class TicTacToeController {
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
             board00.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard01() {
         if (P.placeSymbol(0, 1, B)) {
             board01.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard02() {
         if (P.placeSymbol(0, 2, B)) {
             board02.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard10() {
         if (P.placeSymbol(1, 0, B)) {
             board10.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard11() {
         if (P.placeSymbol(1, 1, B)) {
             board11.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard12() {
         if (P.placeSymbol(1, 2, B)) {
             board12.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard20() {
         if (P.placeSymbol(2, 0, B)) {
             board20.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
     }
     @FXML
     fun changePlayerBoard21() {
         if (P.placeSymbol(2, 1, B)) {
             board21.text = "${B.curPlayer}"
-            commButtonFeature()
+            commButtonAction()
         }
 
     }
@@ -126,12 +127,11 @@ class TicTacToeController {
     fun changePlayerBoard22() {
         if (P.placeSymbol(2, 2, B)) {
             board22.text = "${B.curPlayer}"
-            commButtonFeature()
-
+            commButtonAction()
         }
     }
 
-    fun commButtonFeature() {
+    fun commButtonAction() {
         curPlayer.text = "Current Player is ${B.curPlayer}"
         if (W.Win(B)) {
             winnerForThisGame = "${B.curPlayer} is the winner"
@@ -161,7 +161,9 @@ class TicTacToe: Application() {
 
 class Temp: Application() {
     override fun start(primaryStage: Stage) {
-        val root = FXMLLoader.load<Parent>(javaClass.getClassLoader().getResource("Temp.fxml"))
+        val root = FXMLLoader.load<Parent>(
+                javaClass.getClassLoader()
+                        .getResource("Temp.fxml"))
         primaryStage.title = "TicTacToe"
         primaryStage.scene = Scene(root)
         primaryStage.show()
