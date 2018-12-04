@@ -9,22 +9,33 @@ import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.stage.Stage
 
+var winnerForThisGame = ""
 
 //GUI part
 //
 class TempController {
     @FXML
+    var winner: Label = Label()
+    @FXML
     var regame: Button = Button()
     @FXML
-    var stop: Button = Button()
+    var close: Button = Button()
+
+
+    @Override
+    fun initialize() {
+        winner.text = winnerForThisGame
+    }
 
     fun regame() {
         TicTacToe().start(Stage())
+        (winner.scene.window as Stage).close()
     }
 
-    fun stop(){
-        TicTacToe().stop()
+    fun close() {
+        (winner.scene.window as Stage).close()
     }
+
 }
 
 class TicTacToeController {
@@ -34,7 +45,7 @@ class TicTacToeController {
     val W:CheckForWin = Check()
 
     @FXML
-    var winner: Label = Label()
+    var curPlayer: Label = Label()
     @FXML
     var board00: Button = Button()
     @FXML
@@ -121,9 +132,16 @@ class TicTacToeController {
     }
 
     fun commButtonFeature() {
-        winner.text = "Current Player is ${B.curPlayer}"
-        if (W.Win(B)) {  winner.text = "${B.curPlayer} won the game"; Temp().start(Stage()) }
-        else if (B.isBoardFull) { winner.text = "The game is draw"; Temp().start(Stage()) }
+        curPlayer.text = "Current Player is ${B.curPlayer}"
+        if (W.Win(B)) {
+            winnerForThisGame = "${B.curPlayer} is the winner"
+            Temp().start(Stage())
+            (curPlayer.scene.window as Stage).close()
+        } else if (B.isBoardFull) {
+            winnerForThisGame = "The game is draw"
+            Temp().start(Stage())
+            (curPlayer.scene.window as Stage).close()
+        }
         P.changePlayer(B)
     }
 }
@@ -147,12 +165,6 @@ class Temp: Application() {
         primaryStage.title = "TicTacToe"
         primaryStage.scene = Scene(root)
         primaryStage.show()
-    }
-
-    override fun stop() {
-        val root = FXMLLoader.load<Parent>(javaClass.getClassLoader().getResource("Temp.fxml"))
-        val stage = root.scene.window
-        stage.onCloseRequest
     }
 }
 
