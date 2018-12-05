@@ -153,7 +153,6 @@ class TicTacToeController {
     }
 }
 
-
 class TicTacToe: Application() {
     override fun start(primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(

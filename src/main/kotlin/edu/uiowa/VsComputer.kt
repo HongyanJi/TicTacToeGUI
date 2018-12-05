@@ -13,7 +13,6 @@ import java.util.*
 
 //GUI part for person vs computer
 //
-
 class TicTacToeVsComputerController {
 
     var bool = true
