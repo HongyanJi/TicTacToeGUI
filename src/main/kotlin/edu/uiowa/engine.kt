@@ -1,7 +1,7 @@
 package edu.uiowa
 
 import java.util.Random
-//Second version with GUI: 3x3 board, 2 human players. First player hold "x" symbol.
+//Third version with GUI: 3x3 board, 2 human players or 1 human player with computer.
 //"Engine" part
 //
 interface Board{
@@ -61,7 +61,7 @@ class ThreeByThree : Board {
     }
 }
 
-class TwoHumanPlayer : Player {
+class TwoPlayers : Player {
 
     // Change player symbol back and forth.
     override fun changePlayer(boardObject: ThreeByThree) {
@@ -86,6 +86,7 @@ class TwoHumanPlayer : Player {
         return false
     }
 }
+
 
 class Check :CheckForWin {
     //var board = arrayOf<CharArray>()

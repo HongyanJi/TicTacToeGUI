@@ -8,7 +8,7 @@ class Project2820Test{
     @Test
     fun testForRowWin1(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
@@ -25,7 +25,7 @@ class Project2820Test{
     @Test
     fun testForRowWin2(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
@@ -42,7 +42,7 @@ class Project2820Test{
     @Test
     fun testForColWin1(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
@@ -59,7 +59,7 @@ class Project2820Test{
     @Test
     fun testForColWin2(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
@@ -76,7 +76,7 @@ class Project2820Test{
     @Test
     fun testForDiagonalWin1(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
@@ -93,7 +93,7 @@ class Project2820Test{
     @Test
     fun testForDiagonalWin2(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
@@ -110,7 +110,7 @@ class Project2820Test{
     @Test
     fun testForDiagonalWin3(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 2, B)
         P.changePlayer(B)
@@ -127,7 +127,7 @@ class Project2820Test{
     @Test
     fun testForDiagonalWin4(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         val W = Check()
         P.placeSymbol(0, 2, B)
         P.changePlayer(B)
@@ -144,7 +144,7 @@ class Project2820Test{
     @Test
     fun testForDraw1(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
         P.placeSymbol(1,1, B)
@@ -163,7 +163,7 @@ class Project2820Test{
     @Test
     fun testForDraw2(){
         val B = ThreeByThree()
-        val P = TwoHumanPlayer()
+        val P = TwoPlayers()
         P.placeSymbol(0, 0, B)
         P.changePlayer(B)
         P.placeSymbol(1,1, B)
