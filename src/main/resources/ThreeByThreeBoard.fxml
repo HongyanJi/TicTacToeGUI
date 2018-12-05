@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uiowa.TicTacToeController">
+      <Button fx:id="board00" layoutX="28.0" layoutY="28.0" mnemonicParsing="false" onAction="#changePlayerBoard00" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board01" layoutX="113.0" layoutY="28.0" mnemonicParsing="false" onAction="#changePlayerBoard01" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board02" layoutX="198.0" layoutY="28.0" mnemonicParsing="false" onAction="#changePlayerBoard02" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board10" layoutX="28.0" layoutY="113.0" mnemonicParsing="false" onAction="#changePlayerBoard10" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board11" layoutX="113.0" layoutY="113.0" mnemonicParsing="false" onAction="#changePlayerBoard11" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board12" layoutX="198.0" layoutY="113.0" mnemonicParsing="false" onAction="#changePlayerBoard12" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board20" layoutX="28.0" layoutY="198.0" mnemonicParsing="false" onAction="#changePlayerBoard20" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board21" layoutX="113.0" layoutY="198.0" mnemonicParsing="false" onAction="#changePlayerBoard21" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Button fx:id="board22" layoutX="198.0" layoutY="198.0" mnemonicParsing="false" onAction="#changePlayerBoard22" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: NavajoWhite;">
+      <font>
+         <Font name="Arial Bold" size="36.0" />
+      </font></Button>
+      <Label fx:id="curPlayer" layoutX="50.0" layoutY="6.0" prefHeight="17.0" prefWidth="200.0" style="-fx-background-color: PowderBlue;">
+      <font>
+         <Font name="Arial Bold" size="17.0" />
+      </font></Label>
+</AnchorPane>
