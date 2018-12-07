@@ -9,6 +9,7 @@ import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.stage.Stage
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 
 //GUI part for person vs computer
@@ -19,7 +20,6 @@ class TicTacToeVsComputerController {
     val B:ThreeByThree = ThreeByThree()
     val P = TwoPlayers()
     val W:CheckForWin = Check()
-
     @FXML
     var curPlayer: Label = Label()
     @FXML
@@ -41,13 +41,13 @@ class TicTacToeVsComputerController {
     @FXML
     var board22: Button = Button()
 
+    //computer places symbol by random.
     fun computerMove() {
         while (true) {
             if (bool == false) break
             val x = Random().nextInt(3)
             val y = Random().nextInt(3)
-//            println("x: $x, y: $y")
-//            println("${B.curPlayer}")
+
             if (x == 0 && y == 0 && P.placeSymbol(0, 0, B)) {
                 board00.text = "${B.curPlayer}"
                 commButtonAction()
@@ -87,11 +87,12 @@ class TicTacToeVsComputerController {
             }
         }
     }
-
+// if a person vs computer, the human goes first, then computer places.
     @FXML
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
             board00.text = "${B.curPlayer}"
+//            TimeUnit.SECONDS.sleep(2)
             commButtonAction()
             computerMove()
         }
@@ -161,7 +162,7 @@ class TicTacToeVsComputerController {
             computerMove()
         }
     }
-
+//each button shows the current player with text, check for win or draw.
     fun commButtonAction() {
         curPlayer.text = "Current Player is ${B.curPlayer}"
         if (W.Win(B)) {

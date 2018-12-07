@@ -11,7 +11,7 @@ import javafx.stage.Stage
 
 
 //GUI part
-//
+
 var winnerForThisGame = ""
 
 class TempController {

@@ -1,9 +1,11 @@
 package edu.uiowa
 
 import java.util.Random
-//Third version with GUI: 3x3 board, 2 human players or 1 human player with computer.
+//Third version with GUI: 3x3 board, 2 human players or 1 human player vs computer.
 //"Engine" part
-//
+
+//TicTacToe has three parts, one is board, one is player, the other one is checking for win.
+//create board
 interface Board{
     var board: Array<CharArray>
     var curPlayer: Char
@@ -11,12 +13,12 @@ interface Board{
     fun initBoard()
 
 }
-
+//players hold "X" or "O" symbol.
 interface Player{
     fun placeSymbol(row: Int, col: Int, boardObject: ThreeByThree): Boolean
     fun changePlayer(boardObject: ThreeByThree)
 }
-
+//Check for win if there are three same symbols in the same line: row, column or diagonals.
 interface CheckForWin{
     fun Win(boardObject: ThreeByThree): Boolean
     fun RowsWin(boardObject: ThreeByThree): Boolean
@@ -24,7 +26,7 @@ interface CheckForWin{
     fun DiagonalsWin(boardObject: ThreeByThree): Boolean
     fun RowCol(c1: Char, c2: Char, c3: Char): Boolean
 }
-
+//Create a 3x3 board with "?" values for each cells, and the first player holds "X".
 class ThreeByThree : Board {
 
     override var board = arrayOf<CharArray>()
@@ -60,7 +62,7 @@ class ThreeByThree : Board {
         }
     }
 }
-
+//Two players, One holds "X" and the other one holds "O". if there is "?", player can place symbol.
 class TwoPlayers : Player {
 
     // Change player symbol back and forth.
@@ -87,7 +89,7 @@ class TwoPlayers : Player {
     }
 }
 
-
+//if one player has three symbol in the same line, no matter row, column or diagonals, win.
 class Check :CheckForWin {
     //var board = arrayOf<CharArray>()
     // Return true if there is a win in Rows, Columns or Diagonals, false otherwise.
