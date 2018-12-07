@@ -12,7 +12,9 @@ import java.util.*
 
 
 //GUI part for one person vs a computer
-//
+//the same action the buttons have.
+//Each button holds the current player information, check for win or draw by calling the functions in the engine part.
+//Check if the board is full by calling the function in the engine part.
 class TicTacToeVsComputerController {
 
     var bool = true
@@ -87,7 +89,8 @@ class TicTacToeVsComputerController {
         }
     }
 
-    // a person vs computer version, the human goes first, then computer places randomly.
+    // each button holds the information of the current player and the same features as the common function shows.
+    // a person vs computer version, the human goes first, then computer places symbols randomly.
     @FXML
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
@@ -163,7 +166,8 @@ class TicTacToeVsComputerController {
         }
     }
 
-    //each button shows the current player with "X" or "O", check for win or draw.
+    // each button has the same features: holds the information for the current player, check for win or draw
+    // by calling the functions in the engine part. Or initialize board if the board is full.
     fun commButtonAction() {
         curPlayer.text = "Current Player is ${B.curPlayer}"
         if (W.Win(B)) {

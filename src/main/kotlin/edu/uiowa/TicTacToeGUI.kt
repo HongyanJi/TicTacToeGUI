@@ -10,7 +10,7 @@ import javafx.scene.control.Label
 import javafx.stage.Stage
 
 
-//GUI part
+//GUI part for Two human or One person vs Computer.
 
 var winnerForThisGame = ""
 //Init Board has three choices for the player, one if "Two Human", play the game with two humans.
