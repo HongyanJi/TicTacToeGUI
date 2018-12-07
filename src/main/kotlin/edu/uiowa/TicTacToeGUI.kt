@@ -13,8 +13,10 @@ import javafx.stage.Stage
 //GUI part
 
 var winnerForThisGame = ""
-
-class TempController {
+//Init Board has three choices for the player, one if "Two Human", play the game with two humans.
+//one is "With computer", one person plays with the computer.
+//one is "Close", just close the window, stop the game.
+class InitBoardController {
     @FXML
     var winner: Label = Label()
     @FXML
@@ -26,26 +28,29 @@ class TempController {
 
 
     @Override
+    //made a label to show the winner.
     fun initialize() {
         winner.text = winnerForThisGame
     }
-
-    fun regameWithComputer() {
+    //play with computer.
+    fun WithComputer() {
         TicTacToeVsComputer().start(Stage())
         (winner.scene.window as Stage).close()
     }
-
-    fun regame() {
+    //play with two human.
+    fun TwoHuman() {
         TicTacToe().start(Stage())
         (winner.scene.window as Stage).close()
     }
-
+    //close the window and exit the window.
     fun close() {
         (winner.scene.window as Stage).close()
     }
 
 }
-
+//the same action the buttons have. no matter is two human or one person plays with computer.
+//Each button holds the current player information, check for win or draw by calling the functions in the engine part.
+//Check if the board is full by calling the function in the engine part.
 class TicTacToeController {
 
     val B:ThreeByThree = ThreeByThree()
@@ -73,6 +78,7 @@ class TicTacToeController {
     @FXML
     var board22: Button = Button()
 
+    //each button holds the information of the current player and the same features as the common function shows.
     @FXML
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
@@ -138,21 +144,24 @@ class TicTacToeController {
         }
     }
 
+    // each button has the same features: holds the information for the current player, check for win or draw
+    // by calling the functions in the engine part. Or initialize board if the board is full.
     fun commButtonAction() {
         curPlayer.text = "Current Player is ${B.curPlayer}"
         if (W.Win(B)) {
             winnerForThisGame = "${B.curPlayer} is the winner!"
-            Temp().start(Stage())
+            InitBoard().start(Stage())
             (curPlayer.scene.window as Stage).close()
         } else if (B.isBoardFull) {
             winnerForThisGame = "The game is draw!"
-            Temp().start(Stage())
+            InitBoard().start(Stage())
             (curPlayer.scene.window as Stage).close()
         }
         P.changePlayer(B)
     }
 }
 
+//load FXML file, "ThreeByThreeBoard.fxml", show the board.
 class TicTacToe: Application() {
     override fun start(primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(
@@ -165,7 +174,8 @@ class TicTacToe: Application() {
 
 }
 
-class Temp: Application() {
+//load FXML file, "InitBoard,fxml", show the board.
+class InitBoard: Application() {
     override fun start(primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(
                 javaClass.getClassLoader()
@@ -178,6 +188,6 @@ class Temp: Application() {
 
 
 fun main(args: Array<String>) {
-    Application.launch(Temp::class.java)
+    Application.launch(InitBoard::class.java)
 }
 

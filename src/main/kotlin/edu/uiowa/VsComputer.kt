@@ -9,10 +9,9 @@ import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.stage.Stage
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 
-//GUI part for person vs computer
+//GUI part for one person vs a computer
 //
 class TicTacToeVsComputerController {
 
@@ -87,7 +86,8 @@ class TicTacToeVsComputerController {
             }
         }
     }
-// if a person vs computer, the human goes first, then computer places.
+
+    // a person vs computer version, the human goes first, then computer places randomly.
     @FXML
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
@@ -162,25 +162,26 @@ class TicTacToeVsComputerController {
             computerMove()
         }
     }
-//each button shows the current player with text, check for win or draw.
+
+    //each button shows the current player with "X" or "O", check for win or draw.
     fun commButtonAction() {
         curPlayer.text = "Current Player is ${B.curPlayer}"
         if (W.Win(B)) {
             winnerForThisGame = "${B.curPlayer} is the winner!"
             bool = false
-            Temp().start(Stage())
+            InitBoard().start(Stage())
             (curPlayer.scene.window as Stage).close()
         } else if (B.isBoardFull) {
             winnerForThisGame = "The game is draw!"
             bool = false
-            Temp().start(Stage())
+            InitBoard().start(Stage())
             (curPlayer.scene.window as Stage).close()
         }
         P.changePlayer(B)
     }
 }
 
-
+//load an FXML file, "BoardComputer.fxml". Show the board.
 class TicTacToeVsComputer: Application() {
     override fun start(primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(

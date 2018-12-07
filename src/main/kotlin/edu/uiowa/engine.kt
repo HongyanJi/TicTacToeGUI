@@ -1,10 +1,12 @@
 package edu.uiowa
 
-import java.util.Random
-//Third version with GUI: 3x3 board, 2 human players or 1 human player vs computer.
+
+//Final Project with GUI: 3x3 board, 2 human players or 1 human player vs computer.
+//
 //"Engine" part
 
-//TicTacToe has three parts, one is board, one is player, the other one is checking for win.
+//TicTacToe has three interface parts, one is board, one is player, the other one is checking for win.
+//
 //create board
 interface Board{
     var board: Array<CharArray>
@@ -18,6 +20,7 @@ interface Player{
     fun placeSymbol(row: Int, col: Int, boardObject: ThreeByThree): Boolean
     fun changePlayer(boardObject: ThreeByThree)
 }
+
 //Check for win if there are three same symbols in the same line: row, column or diagonals.
 interface CheckForWin{
     fun Win(boardObject: ThreeByThree): Boolean
@@ -26,13 +29,14 @@ interface CheckForWin{
     fun DiagonalsWin(boardObject: ThreeByThree): Boolean
     fun RowCol(c1: Char, c2: Char, c3: Char): Boolean
 }
+
 //Create a 3x3 board with "?" values for each cells, and the first player holds "X".
 class ThreeByThree : Board {
 
     override var board = arrayOf<CharArray>()
     override var curPlayer = ' '
 
-    // if find "?" return false, otherwise full.
+    //Loop through all the cells in the board. if find "?" symbol, the board is not full, otherwise full.
     override val isBoardFull: Boolean
         get() {
             var isFull = true
@@ -45,7 +49,7 @@ class ThreeByThree : Board {
             }
             return isFull
         }
-
+    //the first player holds "X".
     init {
         board = Array(3) { CharArray(3) }
         curPlayer = 'X'
@@ -53,7 +57,7 @@ class ThreeByThree : Board {
     }
 
 
-    // Set/Reset the board back to empty.
+    // Set/Reset the board back to empty with "?" symbol.
     override fun initBoard() {
         for (i in 0..2) {
             for (j in 0..2) {
@@ -74,7 +78,7 @@ class TwoPlayers : Player {
         }
     }
 
-    // Places a mark at the cell specified by row and col with the symbol of the current player.
+    // Places a symbol at the cell specified by row and col with the symbol of the current player.
     override fun placeSymbol(row: Int, col: Int,boardObject: ThreeByThree): Boolean {
         // bound in 3x3 board.
         if (row >= 0 && row < 3) {
@@ -91,13 +95,13 @@ class TwoPlayers : Player {
 
 //if one player has three symbol in the same line, no matter row, column or diagonals, win.
 class Check :CheckForWin {
-    //var board = arrayOf<CharArray>()
+    // Check the entire board, this calls the other check functions.
     // Return true if there is a win in Rows, Columns or Diagonals, false otherwise.
     override fun Win(boardObject: ThreeByThree): Boolean {
         return RowsWin(boardObject) || ColumnsWin(boardObject) || DiagonalsWin(boardObject)
     }
 
-    // Check win for Rows
+    // Check win by looping through Rows
     override fun RowsWin(boardObject: ThreeByThree): Boolean {
         for (i in 0..2) {
             if (RowCol(boardObject.board[i][0], boardObject.board[i][1], boardObject.board[i][2])) {
@@ -107,7 +111,7 @@ class Check :CheckForWin {
         return false
     }
 
-    // Check win for Columns.
+    // Check win by looping through Columns.
     override fun ColumnsWin(boardObject: ThreeByThree): Boolean {
         for (i in 0..2) {
             if (RowCol(boardObject.board[0][i], boardObject.board[1][i], boardObject.board[2][i]) == true) {
@@ -117,12 +121,12 @@ class Check :CheckForWin {
         return false
     }
 
-    // Check win for Diagonals.
+    // Check win by looping through Diagonals.
     override fun DiagonalsWin(boardObject: ThreeByThree): Boolean {
         return RowCol(boardObject.board[0][0], boardObject.board[1][1], boardObject.board[2][2]) == true || RowCol(boardObject.board[0][2], boardObject.board[1][1], boardObject.board[2][0]) == true
     }
 
-    // if there inputs are the same, win.
+    // if there inputs are the same and not "?" symbol, win.
     override fun RowCol(c1: Char, c2: Char, c3: Char): Boolean {
         return c1 != '?' && c1 == c2 && c2 == c3
     }

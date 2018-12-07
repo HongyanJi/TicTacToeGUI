@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: Cornsilk;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uiowa.TempController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: Cornsilk;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.uiowa.InitBoardController">
       <Label fx:id="winner" alignment="CENTER" layoutX="20" layoutY="20.0" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: BlanchedAlmond;" text="lable">
       <font>
          <Font name="Arial Bold" size="24.0" />
       </font></Label>
-      <Button fx:id="regame" layoutX="60.0" layoutY="100.0" mnemonicParsing="false" onAction="#regame" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: Chartreuse;" text="Two human? ">
+      <Button fx:id="regame" layoutX="60.0" layoutY="100.0" mnemonicParsing="false" onAction="#TwoHuman" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: Chartreuse;" text="Two human? ">
       <font>
          <Font name="Arial Bold" size="18.0" />
       </font></Button>
@@ -18,7 +18,7 @@
       <font>
          <Font name="Arial Bold" size="18.0" />
       </font></Button>
-   <Button fx:id="regameWithComputer" layoutX="60.0" layoutY="160.0" mnemonicParsing="false" onAction="#regameWithComputer" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: Chartreuse;" text="With computer? ">
+   <Button fx:id="regameWithComputer" layoutX="60.0" layoutY="160.0" mnemonicParsing="false" onAction="#WithComputer" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: Chartreuse;" text="With computer? ">
       <font>
          <Font name="Arial Bold" size="18.0" />
       </font></Button>
