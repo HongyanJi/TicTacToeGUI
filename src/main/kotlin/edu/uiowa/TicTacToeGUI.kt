@@ -10,7 +10,7 @@ import javafx.scene.control.Label
 import javafx.stage.Stage
 
 
-//GUI part for Two human or One person vs Computer.
+//GUI part for Two human or One person vs a Computer.
 
 var winnerForThisGame = ""
 //Init Board has three choices for the player, one if "Two Human", play the game with two humans.
@@ -53,9 +53,9 @@ class InitBoardController {
 //Check if the board is full by calling the function in the engine part.
 class TicTacToeController {
 
-    val B:ThreeByThree = ThreeByThree()
-    val P:Player = TwoPlayers()
-    val W:CheckForWin = Check()
+    val B: ThreeByThree = ThreeByThree()
+    val P: Player = TwoPlayers()
+    val W: CheckForWin = Check()
 
     @FXML
     var curPlayer: Label = Label()
@@ -86,6 +86,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard01() {
         if (P.placeSymbol(0, 1, B)) {
@@ -93,6 +94,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard02() {
         if (P.placeSymbol(0, 2, B)) {
@@ -100,6 +102,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard10() {
         if (P.placeSymbol(1, 0, B)) {
@@ -107,6 +110,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard11() {
         if (P.placeSymbol(1, 1, B)) {
@@ -114,6 +118,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard12() {
         if (P.placeSymbol(1, 2, B)) {
@@ -121,6 +126,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard20() {
         if (P.placeSymbol(2, 0, B)) {
@@ -128,6 +134,7 @@ class TicTacToeController {
             commButtonAction()
         }
     }
+
     @FXML
     fun changePlayerBoard21() {
         if (P.placeSymbol(2, 1, B)) {
@@ -136,6 +143,7 @@ class TicTacToeController {
         }
 
     }
+
     @FXML
     fun changePlayerBoard22() {
         if (P.placeSymbol(2, 2, B)) {
@@ -159,6 +167,17 @@ class TicTacToeController {
         }
         P.changePlayer(B)
     }
+//    @FXML
+//    fun PlayerBoard() {
+//        var changePlayerBoard = Array(3) { CharArray(3) }
+//        for (i in 0..2)
+//            for (j in 0..2) {
+//                if (P.placeSymbol(i, j, B)) {
+//                    changePlayerBoard[i][j].text = "${B.curPlayer}"
+//                    commButtonAction()
+//                }
+//            }
+//    }
 }
 
 //load FXML file, "ThreeByThreeBoard.fxml", show the board.
