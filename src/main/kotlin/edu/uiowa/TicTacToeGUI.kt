@@ -167,17 +167,6 @@ class TicTacToeController {
         }
         P.changePlayer(B)
     }
-//    @FXML
-//    fun PlayerBoard() {
-//        var changePlayerBoard = Array(3) { CharArray(3) }
-//        for (i in 0..2)
-//            for (j in 0..2) {
-//                if (P.placeSymbol(i, j, B)) {
-//                    changePlayerBoard[i][j].text = "${B.curPlayer}"
-//                    commButtonAction()
-//                }
-//            }
-//    }
 }
 
 //load FXML file, "ThreeByThreeBoard.fxml", show the board.
