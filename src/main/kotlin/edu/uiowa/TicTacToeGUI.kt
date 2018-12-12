@@ -78,6 +78,46 @@ class TicTacToeController {
     @FXML
     var board22: Button = Button()
 
+//    @FXML
+//    fun changePlayerBoard(row: Int, col: Int,B) {
+//        if (P.placeSymbol(0, 0, B)) {
+//            board00.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(0, 1, B)) {
+//            board01.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(0, 2, B)) {
+//            board02.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(1, 0, B)) {
+//            board10.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(1, 1, B)) {
+//            board11.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(1, 2, B)) {
+//            board12.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(2, 0, B)) {
+//            board20.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(2, 1, B)) {
+//            board21.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//        else if (P.placeSymbol(2, 2, B)) {
+//            board22.text = "${B.curPlayer}"
+//            commButtonAction()
+//        }
+//    }
+
     //each button holds the information of the current player and the same features as the common function shows.
     @FXML
     fun changePlayerBoard00() {
