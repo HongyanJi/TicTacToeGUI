@@ -95,7 +95,6 @@ class TicTacToeVsComputerController {
     fun changePlayerBoard00() {
         if (P.placeSymbol(0, 0, B)) {
             board00.text = "${B.curPlayer}"
-//            TimeUnit.SECONDS.sleep(2)
             commButtonAction()
             computerMove()
         }
