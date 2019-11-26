@@ -1,12 +1,8 @@
 package edu.uiowa
-
-
 //Final Project with GUI: 3x3 board, 2 human players or 1 human player vs computer.
-//
 //"Engine" part
 
 //TicTacToe has three interface parts, one is board, one is player, the other one is checking for win.
-//
 //create board
 interface Board{
     var board: Array<CharArray>
